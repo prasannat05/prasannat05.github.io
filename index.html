@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prasanna T | Portfolio</title>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Neural network canvas background -->
+  <canvas id="neural-net"></canvas>
+  <div class="overlay-vignette"></div>
+
+  <!-- Boot loader screen -->
+  <div id="boot-screen">
+    <div class="boot-loader-box">
+      <div class="boot-header">
+        <span>AETHERIS_OS_v1.0.4</span>
+        <span id="boot-percent">00%</span>
+      </div>
+      <div class="boot-terminal" id="boot-log">
+        <!-- Logs are added dynamically in app.js -->
+      </div>
+      <div class="boot-progress-container">
+        <div class="boot-progress-bar" id="boot-progress"></div>
+      </div>
+      <button class="boot-btn" id="boot-start-btn">INITIALIZE SYSTEM</button>
+    </div>
+  </div>
+
+  <!-- Main desktop interface -->
+  <div class="desktop-container">
+    
+    <!-- System Header -->
+    <header class="system-header">
+      <div class="system-title">
+        <i class="fa-solid fa-atom os-logo"></i>
+        <span>PRASANNA_T</span>
+      </div>
+      <div class="system-status">
+        <div class="header-links">
+          <a href="mailto:prasannat.it@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="tel:+919342795466" title="Phone"><i class="fa-solid fa-phone"></i></a>
+          <a href="https://github.com/prasannat05" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com/in/prasannat05" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <div class="status-indicator">
+          <div class="status-dot"></div>
+          <span>SYS_ONLINE</span>
+        </div>
+        <div class="latency-indicator">
+          <i class="fa-solid fa-bolt"></i>
+          <span>PING: <span id="ping-val">12</span>ms</span>
+        </div>
+        <div class="header-time" id="system-time">19:09:34</div>
+      </div>
+    </header>
+
+    <!-- Workspace: Navigation + Content -->
+    <main class="main-workspace">
+      
+      <!-- Sidebar Navigation -->
+      <nav class="sidebar-nav">
+        <div class="nav-group">
+          <div class="nav-label">Core System</div>
+          <div class="nav-item active" data-panel="system-overview">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>SYS_INFO.exe</span>
+          </div>
+          <div class="nav-item" data-panel="skills-matrix">
+            <i class="fa-solid fa-network-wired"></i>
+            <span>NEURAL_NET.sh</span>
+          </div>
+          <div class="nav-item" data-panel="projects-archive">
+            <i class="fa-solid fa-folder-open"></i>
+            <span>PROJECTS.db</span>
+          </div>
+          <div class="nav-item" data-panel="experience-timeline">
+            <i class="fa-solid fa-terminal"></i>
+            <span>EVENT_LOG.log</span>
+          </div>
+        </div>
+
+        <div class="nav-group" style="margin-top: auto;">
+          <div class="nav-label">External Link</div>
+          <div class="nav-item comm" data-panel="comm-link">
+            <i class="fa-solid fa-satellite-dish"></i>
+            <span>COMM_LINK.lnk</span>
+          </div>
+          
+          <!-- System Specs Card -->
+          <div class="sidebar-system-card">
+            <div class="sys-stat-row">
+              <span>CORE_TEMP</span>
+              <span>42°C</span>
+            </div>
+            <div class="sys-stat-row">
+              <span>ALLOC_RAM</span>
+              <span>8.5 GB</span>
+            </div>
+            <div class="sys-stat-row">
+              <span>SECURITY</span>
+              <span>SECURE</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Window Frame -->
+      <div class="content-window" id="content-window">
+        
+        <!-- Window Chrome Title bar -->
+        <div class="window-chrome">
+          <div class="window-title-block">
+            <i class="fa-solid fa-terminal"></i>
+            <span id="window-title">C:\AETHERIS\SYS_INFO.exe</span>
+          </div>
+          <div class="window-dots">
+            <div class="window-dot close"></div>
+            <div class="window-dot minimize"></div>
+            <div class="window-dot maximize"></div>
+          </div>
+        </div>
+
+        <!-- Window View Area -->
+        <div class="panel-scroller">
+
+          <!-- Section 1: SYSTEM OVERVIEW (ABOUT) -->
+          <section class="system-panel active" id="system-overview">
+            <div class="sys-overview-grid">
+              
+              <!-- Avatar Frame and quick descriptors -->
+              <div class="avatar-container">
+                <div class="avatar-frame">
+                  <img src="profile.jpg" alt="Prasanna T" class="avatar-image">
+                </div>
+                <div class="avatar-badge">CORE_ID: PRASANNA_T</div>
+              </div>
+
+              <!-- Personal Biography & Specifics -->
+              <div class="info-content">
+                <div class="info-hero">
+                  <h1 class="info-name">PRASANNA <span>T</span></h1>
+                  <div class="info-title">Artificial Intelligence & Full Stack Engineer</div>
+                </div>
+
+                <div class="info-bio">
+                  <p class="bio-highlight">Developing intelligent web applications and machine learning architectures designed to operate seamlessly at scale.</p>
+                  <p>I am an Information Technology student at Thiagarajar College of Engineering. I specialize in designing and engineering Full Stack systems coupled with advanced Natural Language Processing and Machine Learning models. From creating campus-scale web platforms to presenting innovative Agentic AI paradigms at Google workshops, I aim to bridge cognitive computing models with robust backend software pipelines.</p>
+                </div>
+
+                <div class="quick-specs-grid">
+                  <div class="spec-card">
+                    <div class="spec-label">Academic Profile</div>
+                    <div class="spec-value">B.Tech - IT</div>
+                    <div class="spec-sub">CGPA: 8.5/10.0</div>
+                  </div>
+                  <div class="spec-card">
+                    <div class="spec-label">Current Institute</div>
+                    <div class="spec-value">TCE Madurai</div>
+                    <div class="spec-sub">Class of 2023 - 2027</div>
+                  </div>
+                  <div class="spec-card">
+                    <div class="spec-label">Primary Domains</div>
+                    <div class="spec-value">AI, ML & Full Stack</div>
+                    <div class="spec-sub">Neural Nets & JS/Py</div>
+                  </div>
+                  <div class="spec-card">
+                    <div class="spec-label">Location Node</div>
+                    <div class="spec-value">Tamil Nadu, IN</div>
+                    <div class="spec-sub">Cuddalore Sector</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- Section 2: NEURAL NET (SKILLS) -->
+          <section class="system-panel" id="skills-matrix">
+            <div class="skills-container">
+              <p class="section-intro-text">
+                Dynamic skill pathways optimized for web development and machine learning systems. Click on technology tags to query capability descriptors.
+              </p>
+              
+              <div class="skills-grid">
+                
+                <!-- Category 1: Languages -->
+                <div class="skill-category-card">
+                  <div class="skill-category-header">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Programming Languages</h3>
+                  </div>
+                  <div class="skill-list">
+                    <div class="skill-item">
+                      <div class="skill-item-header">
+                        <span class="skill-name">Python</span>
+                        <span class="skill-level">90%</span>
+                      </div>
+                      <div class="progress-track">
+                        <div class="progress-fill" data-width="90%"></div>
+                      </div>
+                    </div>
+                    <div class="skill-item">
+                      <div class="skill-item-header">
+                        <span class="skill-name">Java</span>
+                        <span class="skill-level">80%</span>
+                      </div>
+                      <div class="progress-track">
+                        <div class="progress-fill" data-width="80%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skill-tags">
+                    <span class="tech-tag">Object-Oriented Programming</span>
+                    <span class="tech-tag">Algorithms</span>
+                    <span class="tech-tag">Data Structures</span>
+                  </div>
+                </div>
+
+                <!-- Category 2: Web Frameworks -->
+                <div class="skill-category-card">
+                  <div class="skill-category-header">
+                    <i class="fa-solid fa-cubes"></i>
+                    <h3>Web Technologies</h3>
+                  </div>
+                  <div class="skill-list">
+                    <div class="skill-item">
+                      <div class="skill-item-header">
+                        <span class="skill-name">Node.js / Express</span>
+                        <span class="skill-level">85%</span>
+                      </div>
+                      <div class="progress-track">
+                        <div class="progress-fill" data-width="85%"></div>
+                      </div>
+                    </div>
+                    <div class="skill-item">
+                      <div class="skill-item-header">
+                        <span class="skill-name">Angular JS</span>
+                        <span class="skill-level">75%</span>
+                      </div>
+                      <div class="progress-track">
+                        <div class="progress-fill" data-width="75%"></div>
+                      </div>
+                    </div>
+                    <div class="skill-item">
+                      <div class="skill-item-header">
+                        <span class="skill-name">Flask (Python)</span>
+                        <span class="skill-level">80%</span>
+                      </div>
+                      <div class="progress-track">
+                        <div class="progress-fill" data-width="80%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skill-tags">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">REST APIs</span>
+                    <span class="tech-tag">Single Page Apps</span>
+                  </div>
+                </div>
+
+                <!-- Category 3: Databases -->
+                <div class="skill-category-card">
+                  <div class="skill-category-header">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>Databases & Cloud</h3>
+                  </div>
+                  <div class="skill-list">
+                    <div class="skill-item">
+                      <div class="skill-item-header">
+                        <span class="skill-name">MongoDB</span>
+                        <span class="skill-level">85%</span>
+                      </div>
+                      <div class="progress-track">
+                        <div class="progress-fill" data-width="85%"></div>
+                      </div>
+                    </div>
+                    <div class="skill-item">
+                      <div class="skill-item-header">
+                        <span class="skill-name">MySQL / Relational</span>
+                        <span class="skill-level">80%</span>
+                      </div>
+                      <div class="progress-track">
+                        <div class="progress-fill" data-width="80%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skill-tags">
+                    <span class="tech-tag">Firebase Integration</span>
+                    <span class="tech-tag">NoSQL Schemas</span>
+                    <span class="tech-tag">Query Optimization</span>
+                    <span class="tech-tag">Workbench Administration</span>
+                  </div>
+                </div>
+
+                <!-- Category 4: Tools -->
+                <div class="skill-category-card">
+                  <div class="skill-category-header">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <h3>Tools & Platforms</h3>
+                  </div>
+                  <div class="skill-tags" style="margin-top: 10px;">
+                    <span class="tech-tag"><i class="fa-brands fa-git-alt"></i> Git</span>
+                    <span class="tech-tag"><i class="fa-brands fa-github"></i> GitHub</span>
+                    <span class="tech-tag"><i class="fa-brands fa-figma"></i> Figma</span>
+                    <span class="tech-tag">Google Colab</span>
+                    <span class="tech-tag">VS Code</span>
+                    <span class="tech-tag">Postman API Tester</span>
+                    <span class="tech-tag">PyTorch</span>
+                    <span class="tech-tag">HuggingFace Transformers</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 3: PROJECT ARCHIVE -->
+          <section class="system-panel" id="projects-archive">
+            <div class="projects-showcase">
+              
+              <!-- Project 1: MapMoments -->
+              <div class="project-card">
+                <div class="project-details">
+                  <div class="project-meta-line">
+                    <span><i class="fa-solid fa-code-fork"></i> TEAM_PROJECT (SIZE: 3)</span>
+                    <span>•</span>
+                    <span>JUNE 2025 - DEC 2025</span>
+                  </div>
+                  <h2 class="project-title">
+                    <i class="fa-solid fa-location-dot" style="color: var(--neon-cyan)"></i>
+                    MapMoments
+                  </h2>
+                  <p class="project-desc">
+                    A campus map–based social application that enables students to publish location-pinned messages, coordinate dynamic localized events, and view real-time updates pinned directly to coordinates on an interactive campus map canvas.
+                  </p>
+                  <div class="project-tech-list">
+                    <span class="tech-tag">Angular JS</span>
+                    <span class="tech-tag">Node JS</span>
+                    <span class="tech-tag">Express JS</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">Firebase Auth & DB</span>
+                  </div>
+                </div>
+                <div class="project-analytics">
+                  <div class="analytics-header">System Metrics</div>
+                  <div class="analytics-grid">
+                    <div class="stat-item">
+                      <div class="stat-label">MAP_RENDER_latency</div>
+                      <div class="stat-val"><45ms</div>
+                    </div>
+                    <div class="stat-item">
+                      <div class="stat-label">USER_DB_SYNC</div>
+                      <div class="stat-val">REALTIME</div>
+                    </div>
+                    <div class="stat-item">
+                      <div class="stat-label">AUTH_MODULE</div>
+                      <div class="stat-val">FIREBASE</div>
+                    </div>
+                    <div class="stat-item">
+                      <div class="stat-label">DB_REPLICAS</div>
+                      <div class="stat-val">ACTIVE</div>
+                    </div>
+                  </div>
+                  <div class="project-actions">
+                    <button class="proj-btn primary"><i class="fa-solid fa-play"></i> Initialize App</button>
+                    <a href="https://github.com/prasannat05/MapMoments" target="_blank" class="proj-btn"><i class="fa-brands fa-github"></i> Repository</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 2: Smart Grievance -->
+              <div class="project-card">
+                <div class="project-details">
+                  <div class="project-meta-line">
+                    <span><i class="fa-solid fa-brain"></i> TEAM_PROJECT (SIZE: 4)</span>
+                    <span>•</span>
+                    <span>JUNE 2024 - DEC 2024</span>
+                  </div>
+                  <h2 class="project-title">
+                    <i class="fa-solid fa-robot" style="color: var(--neon-purple)"></i>
+                    Smart Grievance
+                  </h2>
+                  <p class="project-desc">
+                    An intelligent grievance management platform built with NLP capabilities. Employs deep transformer models to analyze, categorize, and prioritize user-submitted complaints, routing tickets automatically to appropriate departments with low latency.
+                  </p>
+                  <div class="project-tech-list">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Flask Framework</span>
+                    <span class="tech-tag">PyTorch</span>
+                    <span class="tech-tag">HuggingFace Transformers</span>
+                    <span class="tech-tag">Pandas Matrix Data</span>
+                  </div>
+                </div>
+                <div class="project-analytics">
+                  <div class="analytics-header">System Metrics</div>
+                  <div class="analytics-grid">
+                    <div class="stat-item">
+                      <div class="stat-label">NLP_CLASSIFIER</div>
+                      <div class="stat-val">TRANSFORMERS</div>
+                    </div>
+                    <div class="stat-item">
+                      <div class="stat-label">PREDICTION_CONF</div>
+                      <div class="stat-val">94.8%</div>
+                    </div>
+                    <div class="stat-item">
+                      <div class="stat-label">ROUTING_SPEED</div>
+                      <div class="stat-val">INSTANT</div>
+                    </div>
+                    <div class="stat-item">
+                      <div class="stat-label">DATASET_ROWS</div>
+                      <div class="stat-val">PANDAS_VEC</div>
+                    </div>
+                  </div>
+                  <div class="project-actions">
+                    <button class="proj-btn primary"><i class="fa-solid fa-network-wired"></i> Run Model</button>
+                    <a href="https://github.com/prasannat05/SmartGrievance" target="_blank" class="proj-btn"><i class="fa-brands fa-github"></i> Repository</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- Section 4: TIMELINE (EXPERIENCE & CERTS) -->
+          <section class="system-panel" id="experience-timeline">
+            
+            <div style="display: flex; flex-direction: column; gap: 30px;">
+              
+              <!-- Sub-block: Work Experience -->
+              <div>
+                <h3 class="nav-label" style="padding-left: 0; margin-bottom: 20px; font-size: 0.85rem; color: var(--neon-cyan);">Professional Engagements</h3>
+                <div class="timeline-flow">
+                  
+                  <!-- Intern Item 1: AI Consortium -->
+                  <div class="timeline-node">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-time-badge">JUNE 2025</div>
+                    <div class="timeline-card">
+                      <div class="timeline-header">
+                        <div class="timeline-job">AI & ML Intern</div>
+                        <div class="timeline-company"><i class="fa-solid fa-microchip"></i> AI Consortium Madurai</div>
+                      </div>
+                      <div class="timeline-details">
+                        <p>Completed intensive industry-aligned training in Artificial Intelligence & Machine Learning. Designed and built working prototypes solving real-world classification and prediction use cases with modern deep learning libraries and frameworks.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Intern Item 2: TCE In-Lab -->
+                  <div class="timeline-node">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-time-badge">JULY 2024 - AUGUST 2024</div>
+                    <div class="timeline-card">
+                      <div class="timeline-header">
+                        <div class="timeline-job">Machine Learning IN–LAB Intern</div>
+                        <div class="timeline-company"><i class="fa-solid fa-graduation-cap"></i> Thiagarajar College of Engineering</div>
+                      </div>
+                      <div class="timeline-details">
+                        <ul>
+                          <li>Acquired hands-on experience formulating, training, and optimizing classic ML algorithms.</li>
+                          <li>Participated in rapid-prototype AI Sprint workshops to design applications solving practical engineering constraints.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+
+              <!-- Sub-block: Certifications -->
+              <div>
+                <h3 class="nav-label" style="padding-left: 0; margin-bottom: 12px; font-size: 0.85rem; color: var(--neon-cyan);">Accredited Credentials</h3>
+                <div class="certs-row">
+                  <div class="cert-card">
+                    <i class="fa-solid fa-award cert-icon"></i>
+                    <div class="cert-info">
+                      <div class="cert-name">Java Development & Full Stack</div>
+                      <div class="cert-issuer">Infosys Springboard</div>
+                    </div>
+                  </div>
+                  <div class="cert-card">
+                    <i class="fa-solid fa-database cert-icon"></i>
+                    <div class="cert-info">
+                      <div class="cert-name">MongoDB Certified Dev</div>
+                      <div class="cert-issuer">MongoDB University</div>
+                    </div>
+                  </div>
+                  <div class="cert-card">
+                    <i class="fa-solid fa-code cert-icon"></i>
+                    <div class="cert-info">
+                      <div class="cert-name">HTML5 & CSS3 Architecture</div>
+                      <div class="cert-issuer">Infosys Springboard</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- Section 5: COMM LINK (CONTACT) -->
+          <section class="system-panel" id="comm-link">
+            <div class="contact-grid">
+              
+              <!-- Channels list -->
+              <div class="contact-channels">
+                
+                <a href="mailto:prasannat.it@gmail.com" class="channel-card">
+                  <div class="channel-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+                  <div class="channel-info">
+                    <span class="channel-label">Email Node</span>
+                    <span class="channel-value">prasannat.it@gmail.com</span>
+                  </div>
+                </a>
+
+                <a href="tel:+919342795466" class="channel-card">
+                  <div class="channel-icon">
+                    <i class="fa-solid fa-phone"></i>
+                  </div>
+                  <div class="channel-info">
+                    <span class="channel-label">Direct Line</span>
+                    <span class="channel-value">+91 9342795466</span>
+                  </div>
+                </a>
+
+                <a href="https://github.com/prasannat05" target="_blank" class="channel-card">
+                  <div class="channel-icon">
+                    <i class="fa-brands fa-github"></i>
+                  </div>
+                  <div class="channel-info">
+                    <span class="channel-label">Source Network</span>
+                    <span class="channel-value">github.com/prasannat05</span>
+                  </div>
+                </a>
+
+                <a href="https://linkedin.com/in/prasannat05" target="_blank" class="channel-card">
+                  <div class="channel-icon">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </div>
+                  <div class="channel-info">
+                    <span class="channel-label">Identity Vector</span>
+                    <span class="channel-value">linkedin.com/in/prasannat05</span>
+                  </div>
+                </a>
+
+              </div>
+
+              <!-- Terminal message form -->
+              <div class="terminal-form-card">
+                <div class="form-header">
+                  <span>SEND_SECURE_PACKET.sh</span>
+                  <span>ENCRYPTED_AES256</span>
+                </div>
+                <form id="contact-form" onsubmit="event.preventDefault(); sendSystemMessage();">
+                  <div class="term-form-group" style="margin-bottom: 12px;">
+                    <label for="sender-name">SENDER_NAME_IDENTIFIER:</label>
+                    <input type="text" id="sender-name" class="term-input" placeholder="e.g. Recruiter / Collaborator" required>
+                  </div>
+                  <div class="term-form-group" style="margin-bottom: 12px;">
+                    <label for="sender-contact">RETURN_ROUTE_EMAIL:</label>
+                    <input type="email" id="sender-contact" class="term-input" placeholder="name@domain.com" required>
+                  </div>
+                  <div class="term-form-group" style="margin-bottom: 16px;">
+                    <label for="sender-msg">PACKET_BODY_TEXT:</label>
+                    <textarea id="sender-msg" class="term-input" placeholder="Enter message parameters..." required></textarea>
+                  </div>
+                  <button type="submit" class="form-submit-btn">
+                    <i class="fa-solid fa-paper-plane"></i> TRANSMIT_PACKET
+                  </button>
+                  <p class="form-response-msg success" id="form-ok-msg">
+                    [OK] PACKET SUCCESSFULLY TRANSMITTED INTO LOG PIPELINE.
+                  </p>
+                </form>
+              </div>
+
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Console Status Footer -->
+    <footer class="system-footer">
+      <div class="footer-prompt">
+        <i class="fa-solid fa-angle-right"></i>
+        <span>SYS_LOG:</span>
+      </div>
+      <div class="footer-stream" id="log-ticker">AETHERIS Core operational. Boot sequence completed successfully.</div>
+    </footer>
+
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+</html>
